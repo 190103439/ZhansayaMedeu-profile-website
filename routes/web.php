@@ -29,3 +29,9 @@ Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
 
+Route::get('/cv', function () {
+    return view('cv');
+})->name('cv');
+
+
+
