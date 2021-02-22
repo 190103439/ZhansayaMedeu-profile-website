@@ -19,5 +19,13 @@ Route::get('/', function () {
 
 Route::get('/user', function () {
     return view('user');
-    
 })->name('user');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
+
