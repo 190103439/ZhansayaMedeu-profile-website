@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +30,15 @@ Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
 
+Route::get('post/create', function () {
+   DB::table('post')->insert([
+      'title' => 'Zhansaya',
+      'body' => 'Hello! I am 19 years old.'
+   ]);
+});
 
+Route::get('post', function () {
+    $post = Post::find(1);
+    return $post;
+ });
 
