@@ -15,4 +15,11 @@ class ClientController extends Controller
 
       return view('client.index')->with(['clients' => $clients]);
     }
+    public function store(Request $request){
+      Post::create([
+      'title' => $request->title,
+      'body' => $request->body
+      ]);
+      return back();
+    }
 }

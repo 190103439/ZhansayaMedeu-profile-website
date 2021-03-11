@@ -43,7 +43,12 @@ Route::get('post', function () {
     return $post;
  });
 
- Route::get('post', [ClientController::class, 'index']);
+ Route::get('client', [ClientController::class, 'index']);
+ Route::get('client/create', function(){
+    return view('client.create');
+ });
+
+ Route::post('client/create', [ClientController::class, 'store'])->name('add-client');
 
 
 
