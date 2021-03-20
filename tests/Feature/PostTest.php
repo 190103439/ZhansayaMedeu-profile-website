@@ -17,7 +17,7 @@ class PostTest extends TestCase
     {
         $response = $this->get('/welcome');
 
-        $response->assertStatus(200);
+        $response->assertStatus(404);
     }
     public function test_post_id_get_request() {
         $response = $this->get('/post/1');
