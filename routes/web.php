@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
-use App\Http\Controllers\ClientController;
+
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,24 +34,10 @@ Route::get('/contacts', function () {
 
 Route::get('post/create', function () {
    DB::table('post')->insert([
-      'title' => 'Zhansaya',
-      'body' => 'Hello! I am 19 years old.'
+      'title' => 'Zhansaya Medeu',
+      'body' => '19 years old '
    ]);
 });
 
-Route::get('post', function () {
-    $post = Post::find(1);
-    return $post;
- });
-
- Route::get('client', [ClientController::class, 'index']);
- Route::get('client/create', function(){
-    return view('client.create');
- });
-
- Route::post('client/create', [ClientController::class, 'store'])->name('add-client');
-
-
-
- 
+Route::get('post', [PostController::class, 'index']);
 
